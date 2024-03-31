@@ -11,15 +11,17 @@ const Gallery: FunctionComponent<{ heroes: HeroType[]; columns: number }> = (
   const cols: HeroType[][] = Array.from({ length: columns }, () => []);
   heroes.forEach((hero, i) => cols[i % columns].push(hero));
 
-  const { showModal, openModal, closeModal } = useModal();
+  const { showModal, openModal, closeModal, deleteName } = useModal();
 
   return (
-    <div class="gallery">
-      {showModal && <DeleteForm name="nadie" />}
-      <ModalContext.Provider value={{ showModal, openModal, closeModal }}>
-        {cols.map((heroes) => <Column heroes={heroes} />)}
-      </ModalContext.Provider>
-    </div>
+    <>
+      {showModal && <DeleteForm name={deleteName} closeModal={closeModal} />}
+      <div class={`gallery ${showModal ? "modal" : ""}`}>
+        <ModalContext.Provider value={{ showModal, openModal, closeModal }}>
+          {cols.map((heroes) => <Column heroes={heroes} />)}
+        </ModalContext.Provider>
+      </div>
+    </>
   );
 };
 

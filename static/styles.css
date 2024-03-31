@@ -13,7 +13,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--light)
+  background-color: var(--light);
 }
 
 nav {
@@ -94,6 +94,10 @@ input {
   border-radius: 10px;
   overflow: hidden;
 
+  a {
+    height: fit-content;
+  }
+
   img {
     position: relative;
     vertical-align: middle;
@@ -115,7 +119,6 @@ input {
     position: relative;
     z-index: 6;
     background-color: var(--light);
-    cursor: pointer;
 
     h3 {
       
@@ -126,14 +129,25 @@ input {
       height: 100%;
       width: 3rem;
       position: absolute;
-      right: -3rem;
       padding: 0;
       bottom: 0;
       border: none;
       background-color: rgba(255, 165, 0, 1);
-      transition: right .3s ease;
       cursor: pointer;
       z-index: 1;
+    }
+
+    i.hidden {
+      display: none;
+    }
+
+    button.audio {
+      left: 0;
+    }
+
+    button.delete {
+      right: -3rem;
+      transition: right .3s ease;
     }
   }
 
@@ -145,7 +159,7 @@ input {
       opacity: .95;
     }
 
-    button {
+    button.delete {
       right: 0;
       transition: right .3s ease;
       display: block;
@@ -203,5 +217,50 @@ input {
     background-color: #ffa500;
     margin: 0 auto;
     border-radius: 10px;
+  }
+}
+
+.gallery.modal {
+  opacity: .5;
+  pointer-events: none;
+}
+
+.deleteForm {
+  position: absolute;
+  left: 25%;
+  margin: 0 auto;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  flex-direction: column;
+  gap: 2rem;
+  width: 50%;
+  height: 50%;
+  background-color: #fdfdfd;
+  box-shadow: 0 0 4px rgba(0,0,0,0.5);
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  button {
+    padding: .7rem 1rem;
+    border: none;
+    background-color: #ffa500;
+    margin: 0 auto;
+    border-radius: 10px;
+    cursor: pointer;
+    
+  }
+}
+
+button {
+  &:hover {
+    opacity: .9;
   }
 }

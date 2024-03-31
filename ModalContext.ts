@@ -2,7 +2,7 @@ import { createContext } from "preact";
 
 const ModalContext = createContext({
   showModal: false,
-  openModal: () => {},
+  openModal: (name: string) => {},
   closeModal: () => {},
 });
 

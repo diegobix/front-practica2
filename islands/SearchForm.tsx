@@ -12,9 +12,10 @@ const SearchForm: FunctionComponent<{ heroes: HeroType[] }> = ({ heroes }) => {
       setFilteredHeroes(heroes);
     } else {
       setFilteredHeroes(
-        heroes.filter((h) =>
-          h.name.toLowerCase().includes(query.toLowerCase())
-        ),
+        heroes.filter((h) => {
+          if (!h.name || !h.image) return false;
+          return h.name.toLowerCase().includes(query.toLowerCase());
+        }),
       );
     }
     return () => {};
