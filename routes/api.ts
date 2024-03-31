@@ -34,7 +34,6 @@ export const handler: Handlers = {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ creator }),
       });
-      console.log(res.status);
 
       if (res.status === 404) {
         return new Response("Hero or creator not found", { status: 404 });

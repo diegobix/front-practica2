@@ -17,7 +17,6 @@ const DeleteForm: FunctionComponent<{ name: string; closeModal: () => void }> =
           method: "DELETE",
           body: JSON.stringify({ creator: creator, name: name }),
         });
-        console.log(res.status);
 
         if (res.status !== 204) {
           const msg = await res.text();

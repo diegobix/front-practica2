@@ -10,7 +10,6 @@ import * as $create from "./routes/create.tsx";
 import * as $hero_name_ from "./routes/hero/[name].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $search from "./routes/search.tsx";
-import * as $test from "./routes/test.tsx";
 import * as $CreateForm from "./islands/CreateForm.tsx";
 import * as $DeleteForm from "./islands/DeleteForm.tsx";
 import * as $Gallery from "./islands/Gallery.tsx";
@@ -27,7 +26,6 @@ const manifest = {
     "./routes/hero/[name].tsx": $hero_name_,
     "./routes/index.tsx": $index,
     "./routes/search.tsx": $search,
-    "./routes/test.tsx": $test,
   },
   islands: {
     "./islands/CreateForm.tsx": $CreateForm,

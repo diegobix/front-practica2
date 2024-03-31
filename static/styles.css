@@ -226,8 +226,9 @@ input {
 }
 
 .deleteForm {
-  position: absolute;
+  position: fixed;
   left: 25%;
+  bottom: 25%;
   margin: 0 auto;
   z-index: 10;
   display: flex;
